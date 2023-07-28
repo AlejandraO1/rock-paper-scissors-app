@@ -13,6 +13,11 @@ scissorsButton.addEventListener("click", () => {
   playRound("scissors", computerPlay());
 });
 
+//HTML Elements
+const playerScoreElement = document.getElementById("player-score");
+const computerScoreElement = document.getElementById("computer-score");
+const resultsPhraseElement = document.getElementById("results-phrase");
+
 //Computer Choices
 const gameArray = ["Rock", "Paper", "Scissors"];
 
@@ -24,39 +29,41 @@ function computerPlay() {
   return getComputerChoice();
 }
 
-//Playing a round
+//Playing a game
 function playRound(playerSelect, computerSelect) {
   computerSelect = computerPlay().toLowerCase();
   playerSelect = playerSelect.toLowerCase();
   if (computerSelect === playerSelect) {
-    alert("No one likes a tie");
+    resultsPhraseElement.textContent = "No one likes a tie!";
   } else if (
     (computerSelect == "rock" && playerSelect == "scissors") ||
     (computerSelect == "scissors" && playerSelect == "paper") ||
     (computerSelect == "paper" && playerSelect == "rock")
   ) {
-    alert("Computer wins! You lose");
+    computerScore++;
+    resultsPhraseElement.textContent = "Computer wins! And you lose :(";
   } else if (
     (computerSelect == "rock" && playerSelect == "paper") ||
     (computerSelect == "scissors" && playerSelect == "rock") ||
     (computerSelect == "paper" && playerSelect == "scissors")
   ) {
-    alert("You win! Computer loses");
+    playerScore++;
+    resultsPhraseElement.textContent = "You win! :) And the computer loses";
+  }
+
+  playerScoreElement.textContent = playerScore;
+  computerScoreElement.textContent = computerScore;
+
+  if (playerScore >= 5 || computerScore >= 5) {
+    let winner = playerScore > computerScore ? "Player" : "Computer";
+    resultsPhraseElement.textContent = `The winner is: ${winner}`;
+
+    playerScore = 0;
+    computerScore = 0;
   }
 }
 
-//Playing a game
-function playGame() {
-  computerScore = 0;
-  playerScore = 0;
-  for (let i = 0; i < 5; i++) {
-    onUserInput();
-  }
-}
-
-let computerSelect = getComputerChoice();
+let computerScore = 0;
+let playerScore = 0;
+let computerSelect;
 let playerSelect;
-let computerScore;
-let playerScore;
-
-playGame();
