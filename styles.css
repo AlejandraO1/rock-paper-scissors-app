@@ -29,6 +29,22 @@ button:hover {
   background-color: #070f4e;
 }
 
+footer {
+  text-align: center;
+  color: #070f4e;
+  padding: 25px;
+}
+
+footer a {
+  color: #3ab1c8;
+  text-decoration: none;
+  transition: all 200ms ease-in-out;
+}
+
+footer a:hover {
+  color: #070f4e;
+}
+
 .choices {
   text-align: center;
 }
