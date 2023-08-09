@@ -1,1 +1,39 @@
+body {
+  background-color: #f5ebeb;
+}
 
+h1 {
+  text-align: center;
+  color: #070f4e;
+  font-size: 50px;
+}
+
+h2 {
+  text-align: center;
+  color: #070f4e;
+  font-size: 40px;
+  font-weight: 400;
+}
+
+.choices {
+  text-align: center;
+}
+
+.results {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.player,
+.computer {
+  font-size: 25px;
+  color: #2772db;
+  display: inline-block;
+  padding: 15px 60px;
+}
+
+#results-phrase {
+  color: #3ab1c8;
+  font-size: 25px;
+  font-weight: 700;
+}
