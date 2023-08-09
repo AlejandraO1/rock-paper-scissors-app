@@ -15,6 +15,20 @@ h2 {
   font-weight: 400;
 }
 
+button {
+  background-color: #f5ebeb;
+  border: 2px solid #070f4e;
+  border-radius: 12px;
+  margin: 0 15px;
+  padding: 45px;
+  font-size: 25px;
+  transition: all 200ms ease-in-out;
+}
+
+button:hover {
+  background-color: #070f4e;
+}
+
 .choices {
   text-align: center;
 }
